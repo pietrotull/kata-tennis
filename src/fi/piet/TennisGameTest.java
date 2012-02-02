@@ -45,4 +45,32 @@ public class TennisGameTest extends TestCase {
 		String score = game.getScore();
 		assertEquals("love, thirty", score);
 	}
+	
+	@Test
+	public void testPlayerTwoWins() {
+		game.playerTwoScores();
+		game.playerTwoScores();
+		game.playerTwoScores();
+		game.playerTwoScores();
+
+		String score = game.getScore();
+		assertEquals("Pete Sampras wins!", score);
+	}
+	
+	@Test
+	public void testPlayerOneWins() {
+		game.playerOneScores();
+		game.playerTwoScores();
+		game.playerOneScores();
+		game.playerTwoScores();
+		game.playerOneScores();
+		game.playerTwoScores();
+		game.playerOneScores();
+		game.playerTwoScores();
+		game.playerOneScores();
+		game.playerOneScores();
+
+		String score = game.getScore();
+		assertEquals("Jarkko Nieminen wins!", score);
+	}
 }
